@@ -1,2 +1,3 @@
-# challenge-me
+# Challenge Me
+
 Some coding challenges
