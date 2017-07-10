@@ -8,8 +8,14 @@ Bonus points for writing something that reads roman numerals and produces an int
 
 ### Running the tests:
 
-There's a self-contained test runner written in node in this directory. To run the tests, simply run the JS and pass the command that evaluates
+There's a self-contained test runner written in node in this directory. To run the tests, simply run the JS and pass the command to run the program:
 
 ```sh
-$ node tests node example-solution
+$ node tests node solution-node
+```
+
+Or:
+
+```sh
+$ node tests lein run
 ```
