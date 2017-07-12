@@ -21,10 +21,17 @@ const repeat = (c, n) => {
   return r
 }
 
-const romanNumeralize = number => 
+// Using a reducer:
+const numeralize1 = number => 
   mapping.reduce(({ output, number }, [divisor, notation]) => ({
     number: number % divisor,
     output: output + repeat(notation, floor(number / divisor))
   }), { number, output: '' }).output
 
-console.log(romanNumeralize(+process.argv[2]))
+// Using recursion:
+const numeralize2 = (n, o = "", [x, ...xs] = mapping) => 
+  n === 0
+  ? o
+  : numeralize2 (n % x[0], o + repeat(x[1], floor(n / x[0])), xs)
+
+console.log(numeralize2(+process.argv[2]))
